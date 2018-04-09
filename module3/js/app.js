@@ -13,7 +13,7 @@
     function NarrowItDownController(MenuSearchService) {
         var itemid = this;
         itemid.name = "";
-        itemid.none = true;        
+        itemid.none = false;        
 
         itemid.getMatchedMenuItems = function() {
 
