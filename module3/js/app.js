@@ -79,22 +79,15 @@
     function NarrowItDownController(MenuSearchService) {
         var itemid = this;
         itemid.name = "";
-        itemid.empty = false;
 
         itemid.getMatchedMenuItems = function() {
 
             if ((itemid.name === "") || (itemid.name === undefined)) {
-                itemid.empty = true;
             } else {
-                itemid.empty = false;
                 var promiseServ = MenuSearchService.findTerm(itemid.name);
                 promiseServ.then(function(formatedResult) {
-
-										itemid.found = formatedResult;
-
-                    if (itemid.found.length == 0) {
-                        itemid.empty = true;
-                    }
+		
+		    itemid.found = formatedResult;
 
                 }).catch(function(error) {
                     console.log("Error in Promise : MenuSearchService");
@@ -147,9 +140,7 @@
     function ListElements() {
         var DDO = {
             scope: {
-                found: '<',
-                onRemove: '&',
-                empty: '<'
+                onRemove: '&'
             },
             templateUrl: 'listFound.html',
             bindToController: true,
