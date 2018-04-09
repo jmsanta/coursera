@@ -12,24 +12,25 @@
 
     function NarrowItDownController(MenuSearchService) {
         var itemid = this;
+        itemid.none = false;
         itemid.name = "";
-        itemid.none = false;        
 
         itemid.getMatchedMenuItems = function() {
 
-            if ((itemid.name === "") || (itemid.name === undefined)) {
-              itemid.none = true;
-	     } else {
+            if (itemid.name === undefined || itemid.name === '') {
+                itemid.none = true;
+            } else {
                 var promiseServ = MenuSearchService.findTerm(itemid.name);
+
                 promiseServ.then(function(formatedResult) {
-		
-		    itemid.found = formatedResult;
-                    if (itemid.found.length > 0){
-			 itemid.none = false;
-		     } else { // clear data
-		        itemid.found = {};
+
+                    itemid.foundItems = formatedResult;
+                    if (itemid.foundItems.length > 0) {
+                        itemid.none = false;
+                    } else { // clear data
+                        itemid.foundItems = {};
                         itemid.none = true;
-		    }
+                    }
 
                 }).catch(function(error) {
                     console.log("Error in Promise : MenuSearchService");
@@ -38,15 +39,14 @@
         }
 
         itemid.removeItem = function(item) {
-            //itemid.found.splice(index,1); // by index
-            itemid.found = itemid.found.filter(elm => elm !== item); // by filter
+            itemid.foundItems = itemid.foundItems.filter(elm => elm !== item); // by filter
         }
     }
 
     // service that retrieves the that from server.
-    MenuSearchService.$inject = ['$http']
+    MenuSearchService.$inject = ['$http', '$filter']
 
-    function MenuSearchService($http) {
+    function MenuSearchService($http, $filter) {
 
         var searcher = this;
 
@@ -56,25 +56,22 @@
                 method: "GET",
                 url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
             }).then(function(result) {
+
                 var foundElements = [];
+
+                var term = searchTerm.toLowerCase();
+
                 var dataResults = result.data;
 
-                for (var property in dataResults) {
-
-                    if (dataResults.hasOwnProperty(property)) {
-
-                        for (var cont = 0; cont < dataResults[property].length; cont++) {
-                            var elemt = dataResults[property][cont].name;
-			    elemt = elemt + ', ' + dataResults[property][cont].short_name;
-			    elemt = elemt + ', ' + dataResults[property][cont].description;
-			    elemt = elemt.toLowerCase();                            
-			   
-			    if (elemt.includes(searchTerm.toLowerCase())) {
-                                foundElements.push(elemt);
-                            }
-                        }
-                    }
-                }
+                foundElements = $filter('filter')(dataResults.menu_items, function (d) {
+                  // for (var each in dataResults){
+                      var nam = d.name.toLowerCase();
+                      if(nam.includes(term)){
+                        //foundElements.push(name);
+                        return nam;
+                      }
+                    //}
+                  });
 
                 return foundElements;
 
@@ -88,9 +85,9 @@
     function ListElements() {
         var DDO = {
             scope: {
-                found : '<',
-	        onRemove : '&',
-		none : '<'
+                foundItems: '<',
+                onRemove: '&',
+                none: '<'
             },
             templateUrl: 'listFound.html',
             bindToController: true,
