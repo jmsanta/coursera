@@ -87,10 +87,10 @@
                 itemid.empty = true;
             } else {
                 itemid.empty = false;
-                var promise = MenuSearchService.findTerm(itemid.name);
-                promise.then(function(result) {
+                var promiseServ = MenuSearchService.findTerm(itemid.name);
+                promiseServ.then(function(formatedResult) {
 
-										itemid.found = result;
+										itemid.found = formatedResult;
 
                     if (itemid.found.length == 0) {
                         itemid.empty = true;
