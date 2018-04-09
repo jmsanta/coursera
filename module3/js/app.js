@@ -10,40 +10,8 @@
 
     NarrowItDownController.$inject = ['MenuSearchService'];
 
-    function NarrowItDownController(MenuSearchService) {
-        var itemid = this;
-        itemid.none = false;
-        itemid.name = "";
-
-        itemid.getMatchedMenuItems = function() {
-
-            if (itemid.name === undefined || itemid.name === '') {
-                itemid.none = true;
-            } else {
-                var promiseServ = MenuSearchService.findTerm(itemid.name);
-
-                promiseServ.then(function(formatedResult) {
-
-                    itemid.found = formatedResult;
-                    if (itemid.found.length > 0) {
-                        itemid.none = false;
-                    } else { // clear data
-                        itemid.found = {};
-                        itemid.none = true;
-                    }
-
-                }).catch(function(error) {
-                    console.log("Error in Promise : MenuSearchService");
-                });
-            }
-        }
-
-        itemid.removeItem = function(item) {
-            itemid.found = itemid.found.filter(elm => elm !== item); // by filter
-        }
-    }
-
     // service that retrieves the that from server.
+    // jmsanta - coursera.
     MenuSearchService.$inject = ['$http', '$filter']
 
     function MenuSearchService($http, $filter) {
@@ -63,15 +31,12 @@
 
                 var dataResults = result.data;
 
-                foundElements = $filter('filter')(dataResults.menu_items, function (d) {
-                  // for (var each in dataResults){
-                      var nam = d.name.toLowerCase();
-                      if(nam.includes(term)){
-                        //foundElements.push(name);
+                foundElements = $filter('filter')(dataResults.menu_items, function(d) {
+                    var nam = d.name.toLowerCase();
+                    if (nam.includes(term)) {
                         return nam;
-                      }
-                    //}
-                  });
+                    }
+                });
 
                 return foundElements;
 
@@ -85,7 +50,7 @@
     function ListElements() {
         var DDO = {
             scope: {
-                found: '<',
+                searchedItems: '<',
                 onRemove: '&',
                 none: '<'
             },
@@ -96,4 +61,39 @@
         };
         return DDO;
     }
+
+   // ------------ MAIN CONTROLLER -----------
+    function NarrowItDownController(MenuSearchService) {
+        var itemid = this;
+        itemid.none = false;
+        itemid.name = "";
+
+        itemid.getMatchedMenuItems = function() {
+
+            if (itemid.name === undefined || itemid.name === '') {
+                itemid.none = true;
+            } else {
+                var promiseServ = MenuSearchService.findTerm(itemid.name);
+
+                promiseServ.then(function(formatedResult) {
+
+                    itemid.searchedItems = formatedResult;
+                    if (itemid.searchedItems.length > 0) {
+                        itemid.none = false;
+                    } else { // clear data
+                        itemid.searchedItems = {};
+                        itemid.none = true;
+                    }
+
+                }).catch(function(error) {
+                    console.log("Error in Promise : MenuSearchService");
+                });
+            }
+        }
+
+        itemid.removeItem = function(item) {
+            itemid.searchedItems = itemid.searchedItems.filter(elm => elm !== item); // by filter
+        }
+    }
+
 })();
