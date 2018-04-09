@@ -26,7 +26,10 @@
 		    itemid.found = formatedResult;
                     if (itemid.found.length > 0){
 			 itemid.none = false;
-		     }
+		     } else { // clear data
+		        itemid.found = {};
+                        itemid.none = true;
+		    }
 
                 }).catch(function(error) {
                     console.log("Error in Promise : MenuSearchService");
