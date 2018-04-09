@@ -13,7 +13,7 @@
     function NarrowItDownController(MenuSearchService) {
         var itemid = this;
         itemid.name = "";
-        itemid.none = false;        
+        itemid.none = true;        
 
         itemid.getMatchedMenuItems = function() {
 
@@ -24,8 +24,8 @@
                 promiseServ.then(function(formatedResult) {
 		
 		    itemid.found = formatedResult;
-                    if (itemid.found.length === 0){
-			 itemid.none = true;
+                    if (itemid.found.length > 0){
+			 itemid.none = false;
 		     }
 
                 }).catch(function(error) {
@@ -51,22 +51,28 @@
 
             var response = $http({
                 method: "GET",
-              //  origin: "https://davids-restaurant.herokuapp.com",
                 url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
             }).then(function(result) {
                 var foundElements = [];
                 var dataResults = result.data;
+
                 for (var property in dataResults) {
+
                     if (dataResults.hasOwnProperty(property)) {
-                        //console.log(result1[property].length);
+
                         for (var cont = 0; cont < dataResults[property].length; cont++) {
-                            var line = dataResults[property][cont].name.toUpperCase();
-                            if (line.includes(searchTerm.toUpperCase())) {
-                                foundElements.push(line);
+                            var elemt = dataResults[property][cont].name;
+			    elemt = elemt + ', ' + dataResults[property][cont].short_name;
+			    elemt = elemt + ', ' + dataResults[property][cont].description;
+			    elemt = elemt.toLowerCase();                            
+			   
+			    if (elemt.includes(searchTerm.toLowerCase())) {
+                                foundElements.push(elemt);
                             }
                         }
                     }
                 }
+
                 return foundElements;
 
             }).catch(function(error) {
