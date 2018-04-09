@@ -90,9 +90,12 @@
                 var promise = MenuSearchService.findTerm(itemid.name);
                 promise.then(function(result) {
 
+										itemid.found = result;
+
                     if (itemid.found.length == 0) {
                         itemid.empty = true;
                     }
+
                 }).catch(function(error) {
                     console.log("Error in Promise : MenuSearchService");
                 });
