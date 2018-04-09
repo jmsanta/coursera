@@ -121,9 +121,7 @@
                 method: "GET",
               //  origin: "https://davids-restaurant.herokuapp.com",
                 url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
-            });
-
-						response.then(function(result) {
+            }).then(function(result) {
                 var foundElements = [];
                 var dataResults = result.data;
                 for (var property in dataResults) {
