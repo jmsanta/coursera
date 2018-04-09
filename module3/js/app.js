@@ -51,7 +51,7 @@
         var DDO = {
             scope: {
                 onRemove: '&',
-                none: '<'
+                none: '<',
                 found: '<'
             },
             templateUrl: 'listFound.html',
@@ -88,7 +88,7 @@
 
                 }).catch(function(error) {
                     console.log("Error in Promise : MenuSearchService");
-                    console.log("error : "+ error);
+                    //console.log("error : "+ error);
                 });
             }
         }
