@@ -1,6 +1,6 @@
 <ul>
 <li ng-repeat="item in itemid.found" class="ng-binding ng-scope">
-      {{item + ' : ' }}
+      {{item.name + ' , ' + item.short_name + ' , ' + item.description + " " }}
       <button ng-click="itemid.removeItem(item)">Don't want this one!</button>
 </li>
 </ul>

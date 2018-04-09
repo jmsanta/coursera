@@ -24,11 +24,11 @@
 
                 promiseServ.then(function(formatedResult) {
 
-                    itemid.foundItems = formatedResult;
-                    if (itemid.foundItems.length > 0) {
+                    itemid.found = formatedResult;
+                    if (itemid.found.length > 0) {
                         itemid.none = false;
                     } else { // clear data
-                        itemid.foundItems = {};
+                        itemid.found = {};
                         itemid.none = true;
                     }
 
@@ -39,7 +39,7 @@
         }
 
         itemid.removeItem = function(item) {
-            itemid.foundItems = itemid.foundItems.filter(elm => elm !== item); // by filter
+            itemid.found = itemid.found.filter(elm => elm !== item); // by filter
         }
     }
 
@@ -85,7 +85,7 @@
     function ListElements() {
         var DDO = {
             scope: {
-                foundItems: '<',
+                found: '<',
                 onRemove: '&',
                 none: '<'
             },
