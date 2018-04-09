@@ -79,7 +79,7 @@
     function ListElements() {
         var DDO = {
             scope: {
-                wasfound : '<',
+                found : '<',
 	        onRemove : '&',
 		none : '<'
             },
