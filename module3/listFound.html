@@ -1,5 +1,5 @@
 <ul class="list-group">
-<li ng-repeat="item in itemid.searchedItems" class="ng-binding ng-scope list-group-item list-group-item-success">
+<li ng-repeat="item in itemid.found" class="ng-binding ng-scope list-group-item list-group-item-success">
       {{item.name + ' , ' + item.short_name + ' , ' + item.description + " " }}
       <button ng-click="itemid.removeItem(item)">Don't want this one!</button>
 </li>

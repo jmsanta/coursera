@@ -50,9 +50,9 @@
     function ListElements() {
         var DDO = {
             scope: {
-                searchedItems: '<',
                 onRemove: '&',
                 none: '<'
+                found: '<'
             },
             templateUrl: 'listFound.html',
             bindToController: true,
@@ -70,29 +70,31 @@
 
         itemid.getMatchedMenuItems = function() {
 
-            if (itemid.name === undefined || itemid.name === '') {
-                itemid.none = true;
+            if (itemid.name === undefined ||
+                itemid.name === '') {
+                                    itemid.none = true;
             } else {
                 var promiseServ = MenuSearchService.findTerm(itemid.name);
 
                 promiseServ.then(function(formatedResult) {
 
-                    itemid.searchedItems = formatedResult;
-                    if (itemid.searchedItems.length > 0) {
+                    itemid.found = formatedResult;
+                    if (itemid.found.length > 0) {
                         itemid.none = false;
-                    } else { // clear data
-                        itemid.searchedItems = {};
+                    } else { // clear data ON THE SCREEN
+                        itemid.found = {};
                         itemid.none = true;
                     }
 
                 }).catch(function(error) {
                     console.log("Error in Promise : MenuSearchService");
+                    console.log("error : "+ error);
                 });
             }
         }
 
         itemid.removeItem = function(item) {
-            itemid.searchedItems = itemid.searchedItems.filter(elm => elm !== item); // by filter
+            itemid.found = itemid.found.filter(elm => elm !== item); // by filter
         }
     }
 
