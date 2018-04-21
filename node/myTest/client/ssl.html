@@ -1,0 +1,28 @@
+<html ng-app="appSockets">
+<head>
+<meta charset="UTF-8">
+<title>My Aplicación con Sockets</title>
+<script src="https://localhost:7736/socket.io/socket.io.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js" integrity="sha256-WKvqiY0jZHWQZIohYEmr9KUC5rEaYEOFTq+ByllJK8w=" crossorigin="anonymous"></script> -->
+<script src="lib/angular.min.js"></script>
+<script src="js/main_SSL.js"></script>
+</head>
+<body ng-controller="messageController as msgControl">
+<h1>ANGULAR SOCKET MESSAGES</h1>
+<form>
+	<input type="text" ng-model="username" placeholder="Tu Nombre" >
+    <input type="text" ng-model="text" placeholder="Introduce el texto">
+    <input type="submit" value="Enviar!" ng-click="msgControl.addMessage()">
+</form>
+<ul>
+<li ng-repeat="item in msgControl.msgList">
+	<div>
+	    <strong>{{item.author}}</strong>
+			:
+	     <em>{{item.text}}</em>
+	</div>
+</li>
+</ul>
+</br>
+</body>
+</html>

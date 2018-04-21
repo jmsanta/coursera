@@ -1,0 +1,33 @@
+{
+  "name": "ulises-server",
+  "version": "1.0.0",
+  "description": "ulises ubuntu 14 node server",
+  "main": "js/main_SSL.js",
+  "scripts": {
+    "start": "nodemon js/chatServer.js",
+    "ssl":   "nodemom js/main_SSL.js",
+    "main":  "nodemon js/main.js" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmsanta/node/tree/server.git"
+  },
+  "keywords": [
+    "ulises-node"
+  ],
+  "author": "jmsanta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmsanta/node/issues"
+  },
+  "homepage": "https://github.com/jmsanta/node/tree/server#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.7",
+    "socket.io": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}

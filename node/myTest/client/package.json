@@ -1,0 +1,24 @@
+{
+  "name": "nodeclient", 
+  "version": "1.0.0",
+  "description": "node client side",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "nodemon index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmsanta/node/tree/client.git"
+  },
+  "keywords": [
+    "nodeclient"
+  ],
+  "author": "jmsanta",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
