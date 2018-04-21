@@ -64,5 +64,4 @@ mongocl.connect('mongodb://127.0.0.1/test', function(er, db) {
         });
 
     });
-
 });
