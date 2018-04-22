@@ -1,3 +1,4 @@
+
 (function () {
   'use strict';
 
@@ -8,8 +9,8 @@
   function ItemsController(items) {
     var $ctrl = this;
 
-    $ctrl.itemDetail = items.data.menu_items;
-    console.log($ctrl.items);
+    $ctrl.items = items.data.menu_items;
+    // console.log($ctrl.items);
   }
 
 })();
