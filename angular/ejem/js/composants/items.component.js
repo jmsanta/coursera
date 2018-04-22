@@ -3,7 +3,7 @@
 
   angular.module('MenuApp')
     .component('items', {
-      templateUrl: 'views/itemsDetail.html',
+      templateUrl: 'https://jmsanta.github.io/coursera/angular/ejem/itemsDetail.html',
       bindings: {
         items: '<'
       }
