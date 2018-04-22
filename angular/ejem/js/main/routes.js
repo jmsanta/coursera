@@ -26,7 +26,7 @@
         }
       })
 
-      .state('items', {
+      .state('categories.items', {
         url: '/items/{categoryShortName}',
         templateUrl: 'https://jmsanta.github.io/coursera/angular/ejem/itemsDetail.html',
         controller: 'ItemsController as items',
