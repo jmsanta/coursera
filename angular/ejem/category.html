@@ -1,13 +1,9 @@
-<br>
-<br>
-<ul>
-	  	<li ng-repeat="item in categories.items" ui-sref="categories.item({itemId: $index})">
-            <a>    	<div  ui-sref="categories.item({itemId: $index})">name : {{ item.name }}</div>  </a>  
-			<div>name : {{ item.name }}</div>
-			<div>short_name : {{ item.short_name }}</div>
-			<div>description : {{ item.description }}</div>
 
-		</li>
-</ul>
-
-
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="category in $ctrl.categories">
+    <a ui-sref="items( { categoryShortName: category.short_name })">
+      <h4 class="pull-right">{{ category.short_name }}</h4>
+      <h4>{{ category.name }}</h4>
+    </a>
+  </li>
+</u
