@@ -1,5 +1,5 @@
 
-angular.module('MenuApp',['ui.router']);
+angular.module('MenuApp',['ui.router', 'data']);
 
 angular.module('MenuApp')
 .config(RoutesConfig);
@@ -27,7 +27,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 		  }]
 	  }
     })
-	/*
+	
 	// item detail
 	
 	.state('categories.item', {
@@ -40,7 +40,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 			  return MenuDataService.getAllCategories(itemId);
 		  }]
 	  }
-    });*/
+    });
 }
 
 
