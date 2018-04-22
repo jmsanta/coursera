@@ -3,7 +3,7 @@
 
   angular.module('MenuApp')
     .component('categories', {
-      templateUrl: 'templates/category.html',
+      templateUrl: 'https://jmsanta.github.io/coursera/angular/ejem/categories.html',
       bindings: {
         categories: '<'
       }
