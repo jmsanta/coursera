@@ -9,7 +9,7 @@
     var $ctrl = this;
 
     $ctrl.items = items.data.menu_items;
-    // console.log($ctrl.items);
+    console.log($ctrl.items);
   }
 
 })();
