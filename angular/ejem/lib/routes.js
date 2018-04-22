@@ -2,10 +2,10 @@
 (function () {
   'use strict';
 
+    RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+  
   angular.module('MenuApp')
     .config(RoutesConfig);
-
-  RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   function RoutesConfig($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
@@ -18,7 +18,7 @@
 
       .state('categories', {
         url: '/categories',
-        templateUrl: 'templates/category.html',
+        templateUrl: 'https://jmsanta.github.io/coursera/ejem/category.html',
         controller: 'CategoriesController as categories',
         resolve: {
           categories: ['MenuDataService', function (MenuDataService) {
@@ -29,7 +29,7 @@
 
       .state('items', {
         url: '/items/{categoryShortName}',
-        templateUrl: 'templates/items.html',
+        templateUrl: 'https://jmsanta.github.io/coursera/ejem/templates/items.html',
         controller: 'ItemsController as items',
         resolve: {
           items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
