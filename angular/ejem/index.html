@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="MenuApp">
+<html>
   <head>
      <title>MenuApp Restaurant</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -8,10 +8,8 @@
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
     <script src="lib/routes.js"></script>
-
-		
-    <script src="js/main/menu.app.js"></script>
-
+	
+	 <script src="js/main/menu.app.js"></script>
     <script src="js/main/data.module.js"></script>
 	
     <script src="js/composants/categories.component.js"></script>
@@ -25,7 +23,7 @@
   
 </head>
  
-  <body>
+  <body ng-app="MenuApp">
     <ui-view></ui-view>
   </body>
 </html>
