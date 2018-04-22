@@ -13,12 +13,12 @@
     $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: 'https://jmsanta.github.io/coursera/ejem/home.html'
+        templateUrl: 'https://jmsanta.github.io/coursera/angular/ejem/home.html'
       })
 
       .state('categories', {
         url: '/categories',
-        templateUrl: 'https://jmsanta.github.io/coursera/ejem/category.html',
+        templateUrl: 'https://jmsanta.github.io/coursera/angular/ejem/category.html',
         controller: 'CategoriesController as categories',
         resolve: {
           categories: ['MenuDataService', function (MenuDataService) {
@@ -29,7 +29,7 @@
 
       .state('items', {
         url: '/items/{categoryShortName}',
-        templateUrl: 'https://jmsanta.github.io/coursera/ejem/items.html',
+        templateUrl: 'https://jmsanta.github.io/coursera/angular/ejem/items.html',
         controller: 'ItemsController as items',
         resolve: {
           items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
