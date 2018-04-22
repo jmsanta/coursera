@@ -4,7 +4,7 @@
 
   angular.module('MenuApp')
     .component('items', {
-     templateUrl: 'https://jmsanta.github.io/coursera/angular/ejem/itemsDetail.html',
+     templateUrl: 'templates/items.html',
       bindings: {
         items: '<'
       }

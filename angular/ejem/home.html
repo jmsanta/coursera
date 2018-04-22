@@ -1,19 +1,29 @@
-
-<h3>Welcome to our Restaurant!! select the option</h3>
-</br>
-
-      <ol>
-	    <li>
-	      <a class="nav-link" ui-sref="home"
-	      ui-sref-active="active">MenuApp</a>
-	    </li>
-	    <li>
-	      <a class="nav-link" ui-sref="categories"
-	      ui-sref-active="active">Categories</a>
-	    </li>
-		<li>
-	      <a class="nav-link" ui-sref="home"
-	      ui-sref-active="active">All</a>
-	    </li>
-	</ol>
-
+<!doctype html>
+<html>
+  <head>
+     <title>MenuApp Restaurant</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css"> 
+	
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+	
+    <script src="js/main/menu.app.js"></script>
+	<script src="js/main/routes.js"></script>
+    <script src="js/main/data.module.js"></script>
+	
+    <script src="js/composants/categories.component.js"></script>
+	<script src="js/composants/items.component.js"></script>
+	
+    <script src="js/controllers/categories.controller.js"></script>
+    <script src="js/controllers/items.controller.js"></script>
+	
+    <script src="js/services/menudata.service.js"></script>
+  </head>
+  
+</head>
+ 
+  <body ng-app="MenuApp">
+    <ui-view></ui-view>
+  </body>
+</html>
