@@ -8,23 +8,28 @@
   <body>
     <h1>RESTAURANT</h1>
 
-    <div class="resTabs">
-      <a ui-sref="home" ui-sref-active="activeTab">HOME</a>
-      <a ui-sref="categories" ui-sref-active="activeTab">categories</a>
-	  
-      <!-- <button ui-sref="tab2">Tab 2</button> -->
-    </div>
 
     <ui-view></ui-view>
-
-    <!-- scripts -->
-    <script src="lib/angular.min.js"></script>
+	
+	<!-- Libraries -->
+	<script src="lib/angular.min.js"></script>
 	<script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- modules -->
+    
 	<script src="js/menuapp.module.js"></script>
 	<script src="js/data.module.js"></script>
-	<script src="js/menudata.service.js"></script
+	
+    <!-- components -->	
 	<script src="js/categories.component.js"></script>
-	<script src="js/items.component.js"></script>
+	<script src="js/items.component.js"></script> 
+	
+	<!-- service -->
+	
+	<script src="js/menudata.service.js"></script
+	
+	<!-- controllers -->
+	
 	<script src="js/MenuDataServiceController.js"></script>
 	<script src="js/ItemServiceController.js"></script>
 
