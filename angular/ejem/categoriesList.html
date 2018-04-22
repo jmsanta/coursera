@@ -2,7 +2,7 @@
 <br>
 <ul>
 	  	<li ng-repeat="item in categories.items" ui-sref="categories.item({itemId: $index})">
-
+            <a>    	<div  ui-sref="categories.item({itemId: $index})">name : {{ item.name }}</div>  </a>  
 			<div>name : {{ item.name }}</div>
 			<div>short_name : {{ item.short_name }}</div>
 			<div>description : {{ item.description }}</div>
