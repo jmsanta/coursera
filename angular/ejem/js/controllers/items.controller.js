@@ -8,7 +8,7 @@
   function ItemsController(items) {
     var $ctrl = this;
 
-    $ctrl.items = items.data.menu_items;
+    $ctrl.itemsDetail = items.data.menu_items;
     console.log($ctrl.items);
   }
 
