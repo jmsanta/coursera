@@ -20,7 +20,7 @@
         templateUrl: 'https://jmsanta.github.io/coursera/angular/ejem/categoriesList.html',
         controller: 'CategoriesController as categories',
         resolve: {
-          items: ['MenuDataService', function (MenuDataService) {
+          categories: ['MenuDataService', function (MenuDataService) {
             return MenuDataService.getAllCategories();
           }]
         }
