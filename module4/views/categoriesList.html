@@ -1,0 +1,15 @@
+<a ui-sref="home">Home</a> &lt; <span>List of categories</span>
+
+<h3>categories list</h3>
+
+<br>
+<br>
+
+<ul>
+	  	<li ng-repeat="item in MenuController.items" ui-sref="categories.item({itemId: $index})">>
+
+			<div>Item name: {{ item.name }}</div>
+			<div>Item description: {{ item.description }}</div>
+
+		</li>
+</ul>
