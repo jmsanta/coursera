@@ -1,10 +1,9 @@
-	'use strict'; 
+	'use strict';
 
-	angular.module("MenuApp").config(RoutesConfig);
 
-	RoutesConfig.$inject = ['$stateProvider','$urlRouterProvider'];
+RoutesConfig.$inject = ['$stateProvider','$urlRouterProvider'];
+angular.module("MenuApp").config(RoutesConfig);
 
-RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // Redirect to HOME if no other URL matches
@@ -27,15 +26,15 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 		  }]
 	  }
     })
-	
+
 	// item detail
-	
+
 	.state('categories.item', {
       url: '/categories/{itemId}',
       templateUrl: 'https://jmsanta.github.io/coursera/module4/views/itemDetail.html',
 	  controller: 'itemServiceController as itemController',
 	  resolve: {
-		  items : ['$stateParams','MenuDataService', 
+		  items : ['$stateParams','MenuDataService',
 		  function() {
 			  return MenuDataService.getAllCategories(itemId);
 		  }]
