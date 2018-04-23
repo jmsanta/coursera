@@ -17,20 +17,20 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       url: '/home',
       templateUrl: 'views/home.html'
     })
-   /*
+
     .state('categories', {
       url: '/categories',
-      templateUrl: 'https://jmsanta.github.io/coursera/module4/views/categoriesList.html',
-	  controller: 'MenuDataServiceController as MenuController',
+      templateUrl: 'views/categoriesList.html',
+	  //controller: 'MenuDataServiceController as MenuController',
 	  resolve : {
-		  items:['MenuDataService', function(){
-			  return MenuDataService.getAllCategories();
-		  }]
+		  /*items:['MenuDataService', function(){
+			  //return MenuDataService.getAllCategories();
+		  }]*/
 	  }
     })
 
 	// item detail
-
+/*
 	.state('categories.item', {
       url: '/categories/{itemId}',
       templateUrl: 'https://jmsanta.github.io/coursera/module4/views/itemDetail.html',
