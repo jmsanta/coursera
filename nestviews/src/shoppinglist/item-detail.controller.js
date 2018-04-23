@@ -16,7 +16,7 @@ function ItemDetailController($stateParams, items, $filter) {
                         return cat;
                     }
                 });
-				
+ console.log(itemDetail.foundElements);				
 }
 
 })();
