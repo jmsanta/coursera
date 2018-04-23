@@ -21,11 +21,11 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     .state('categories', {
       url: '/categories',
       templateUrl: 'views/categoriesList.html',
-	  //controller: 'MenuDataServiceController as MenuController',
+	  controller: 'MenuDataServiceController as MenuController',
 	  resolve : {
-		  /*items:['MenuDataService', function(){
-			  //return MenuDataService.getAllCategories();
-		  }]*/
+		  items:['MenuDataService', function(){
+			 return MenuDataService.getAllCategories();
+		  }]
 	  }
     })
 

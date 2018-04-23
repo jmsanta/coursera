@@ -6,9 +6,9 @@ angular.module('data')
 MenuDataService.$inject = ['$http', '$filter']
 
 function MenuDataService($http, $filter) {
-     
+
 	 var menuData = this;
-	 
+
 		menuData.getAllCategories = function() {
 
             var response = $http({
@@ -23,7 +23,7 @@ function MenuDataService($http, $filter) {
             });
             return response;
         }
-    
+
 		menuData.getItemsForCategory = function(categoryShortName) {
 
             var response = $http({
