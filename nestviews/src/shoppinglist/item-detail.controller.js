@@ -5,13 +5,19 @@ angular.module('MenuApp')
 .controller('ItemDetailController', ItemDetailController);
 
 // Version with resolving to 1 item based on $stateParams in route config
-ItemDetailController.$inject = ['$stateParams', 'items'];
-function ItemDetailController($stateParams, items) {
+ItemDetailController.$inject = ['$stateParams', 'items', '$filter'];
+function ItemDetailController($stateParams, items, $filter) {
   var itemDetail = this;
-  var item = items.data.menu_items[$stateParams.itemId];
-  itemDetail.name = item.short_name; 
-  itemDetail.quantity = item.price; 
-  itemDetail.description = item.description; 
+  
+  var foundElement = $filter('filter')(items.data.menu_items, function(d) {
+                    var cat = d.short_name.toLowerCase();
+                    if (cat.includes(itemId)) {
+                        return cat;
+                    }
+                });
+  
+  itemDetail.name = foundElement.short_name;  
+  itemDetail.description = foundElement.description; 
 }
 
 })();
