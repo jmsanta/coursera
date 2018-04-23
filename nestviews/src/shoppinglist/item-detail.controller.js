@@ -10,13 +10,15 @@ function ItemDetailController($stateParams, items, $filter) {
   var itemDetail = this;
   var category = $stateParams.itemId.toLowerCase();
   
- itemDetail.foundElements = $filter('filter')(items.data.menu_items, function(d) {
+ itemDetail.items = items.data.menu_items;
+ 
+ /*$filter('filter')(items.data.menu_items, function(d) {
                     var cat = d.short_name.toLowerCase();
                     if (cat.includes(category)) {
                         return cat;
                     }
                 });
- console.log(itemDetail.foundElements);				
+ console.log(itemDetail.foundElements);	*/			
 }
 
 })();
