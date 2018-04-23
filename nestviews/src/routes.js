@@ -25,19 +25,21 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
     controller: 'MainShoppingListController as mainList',
     resolve: {
-      items: ['ShoppingListService', function (ShoppingListService) {
-        return ShoppingListService.getItems();
+      items: ['MenuDataService', function (MenuDataService) {
+        return MenuDataService.getAllCategories();
       }]
     }
   })
 
   // Item detail
   .state('mainList.itemDetail', {
-    // url: '/item-detail/{itemId}',
+    url: '/item-detail/{itemId}',
     templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
     controller: 'ItemDetailController as itemDetail',
-    params: {
-      itemId: null
+    resolve: {
+          items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
+            return MenuDataService.getItemsForCategory($stateParams.itemId);
+          }]
     }
   });
 
