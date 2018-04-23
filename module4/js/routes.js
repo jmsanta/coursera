@@ -15,9 +15,9 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: ' https://jmsanta.github.io/coursera/module4/views/home.html'
+      templateUrl: 'https://jmsanta.github.io/coursera/module4/views/home.html'
     })
-
+   /*
     .state('categories', {
       url: '/categories',
       templateUrl: 'https://jmsanta.github.io/coursera/module4/views/categoriesList.html',
@@ -41,6 +41,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 			  return MenuDataService.getAllCategories(itemId);
 		  }]
 	  }
-    });
+	});*/
 }
 })();
