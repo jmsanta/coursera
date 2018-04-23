@@ -1,2 +1,8 @@
-<div>Item name: {{ itemDetail.short_name }}</div>
-<div>Item description: {{ itemDetail.description }}</div>
+<ul>
+  <li ng-repeat="item in $ctrl.foundElements">
+   
+   <div>category name: {{ itemDetail.short_name }}</div>
+   <div>category description: {{ itemDetail.description }}</div>
+   
+  </li>
+</ul>
