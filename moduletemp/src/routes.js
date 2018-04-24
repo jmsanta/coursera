@@ -32,7 +32,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   // Item detail
-  .state('mainList.itemDetail', {
+  .state('itemDetail', {
     url: '/item-detail/{itemId}',
     templateUrl: 'src/templates/item-detail.template.html',
     controller: 'ItemDetailController as itemDetail',
