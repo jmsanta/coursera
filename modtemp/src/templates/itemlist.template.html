@@ -1,5 +1,6 @@
 <ul>
-  <li ng-repeat="item in $ctrl.items">
+  <li ng-repeat="item in itemList.items">
        {{ item.short_name }} - {{ item.name }}
   </li>
 </ul>
+<item-list items="itemList.items"></item-list>
