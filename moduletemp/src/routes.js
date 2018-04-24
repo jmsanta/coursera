@@ -33,7 +33,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // Item detail
   .state('itemDetail', {
-    url: '/item-detail/{itemId}',
+    url: '/item-detail/{itemId}?short_name',
     templateUrl: 'src/templates/itemdetail.template.html',
     controller: 'ItemDetailController as itemDetail',
     resolve: {
