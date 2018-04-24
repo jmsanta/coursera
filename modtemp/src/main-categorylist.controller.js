@@ -11,7 +11,7 @@ function MainCategoryListController(MenuDataService, items) {
   // get the data of categories.
   mainList.items = items.data;
 
-    $state.go("itemList");
+  //  $state.go("itemList");
 }
 
 })();
