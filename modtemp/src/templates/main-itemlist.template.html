@@ -1,4 +1,6 @@
-<a ui-sref="home">Home</a> &lt; <span>categories Restaurant List</span>
-<h3>items details</h3>
-<item-list items="itemList.items"></item-list>
-<ui-view></ui-view>
+<ul>
+  <li ng-repeat="item in $ctrl.items"
+      ui-sref="itemList">
+       {{ item.short_name }} - {{ item.name }}
+  </li>
+</ul>
