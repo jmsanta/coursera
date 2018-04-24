@@ -1,8 +1,14 @@
 <ul>
   <li ng-repeat="item in $crtl.items">
-    
+
    <div>category name: {{ item.short_name }}</div>
    <div>category description: {{ item.description }}</div>
-   
+
   </li>
 </ul>
+
+<a ui-sref="home">Home</a> &lt; <span>categories Restaurant List</span>
+
+<h3>items details</h3>
+<item-detail items="mainList.items"></item-detail>
+<ui-view></ui-view>
