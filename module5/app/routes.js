@@ -22,13 +22,13 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // myInfo
   .state('myInfo', {
     url: '/myInfo',
-    templateUrl: '/templates/myInfo.html'
+    templateUrl: 'http://jmsanta.github.io/coursera/module5/templates/myInfo.html'
   })
 
   // Item detail
   .state('signin', {
     url: '/signin',
-    templateUrl: '/templates/signup.html',
+    templateUrl: 'http://jmsanta.github.io/coursera/module5/templates/signup.html',
     controller: 'siginController as ctrl'
   });
 
