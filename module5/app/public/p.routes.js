@@ -41,5 +41,27 @@ function routeConfig ($stateProvider) {
         }]
       }
     });
+	
+	 // Home page
+  .state('home', {
+    url: '/home',
+    templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/home.html'
+  })
+
+  // myInfo
+  .state('myInfo', {
+    url: '/myInfo', // must be HTTPS to be valid.
+    templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/myInfo.html'
+  })
+
+  // Item detail
+  .state('signin', {
+    url: '/signin', // must be HTTPS to be valid.
+    templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/signup.html',
+    controller: 'SignupController as ctrl'
+	 
+  });
+
+}
 }
 })();
