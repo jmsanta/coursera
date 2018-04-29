@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('validationApp')
+angular.module('ValidationApp')
 .controller('SignupController', SignupController);
 
 // 'item' is injected through state's resolve
