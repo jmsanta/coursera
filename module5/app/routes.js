@@ -15,8 +15,8 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // Home page
   .state('home', {
-    url: '/',
-    templateUrl: 'index.html'
+    url: '/home',
+    templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/home.html'
   })
 
   // myInfo
