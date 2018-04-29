@@ -1,7 +1,7 @@
 (function() {
 'use strict';
 
-angular.module('public')
+angular.module('validationApp')
 .config(routeConfig);
 
 /**
@@ -10,6 +10,11 @@ angular.module('public')
 routeConfig.$inject = ['$stateProvider'];
 function routeConfig ($stateProvider) {
   // Routes
+  
+  
+  // Redirect to home page if no other URL matches
+  $urlRouterProvider.otherwise('/home');
+  
   $stateProvider
     .state('public', {
       abstract: true,
@@ -62,6 +67,4 @@ function routeConfig ($stateProvider) {
 	 
   });
 
-}
-}
 })();
