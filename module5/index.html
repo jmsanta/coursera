@@ -20,7 +20,7 @@
           </a>
 
           <div class="navbar-brand">
-            <a href="index.html"><h1>David Chu's China Bistro</h1></a>
+            <a ui-sref="home" ui-sref-active="activeTab"><h1>David Chu's China Bistro</h1></a>
             <p>
               <img src="images/star-k-logo.png" alt="Kosher certification">
               <span>Kosher Certified</span>
@@ -38,7 +38,7 @@
         <div id="collapsable-nav" class="collapse navbar-collapse">
            <ul id="nav-list" class="nav navbar-nav navbar-right">
             <li class="visible-xs active">
-              <a href="index.html">
+              <a ui-sref="home" ui-sref-active="activeTab">
                 <span class="glyphicon glyphicon-home"></span> Home</a>
             </li>
             <li>
@@ -46,11 +46,11 @@
                 <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
             </li>
             <li>
-              <a href="#">
+              <a ui-sref="myInfo" ui-sref-active="activeTab">
                 <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
             </li>
             <li>
-              <a href="#">
+              <a ui-href="signup" ui-sref-active="activeTab">
                 <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
             </li>
             <li id="phone" class="hidden-xs">
