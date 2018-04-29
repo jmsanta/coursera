@@ -40,7 +40,7 @@ function routeConfig ($stateProvider) {
           return MenuService.getMenuItems($stateParams.category);
         }]
       }
-    });
+    })
 	
 	 // Home page
   .state('home', {
