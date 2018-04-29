@@ -5,12 +5,13 @@ angular.module('ValidationApp')
 .controller('SignupController', SignupController);
 
 // 'item' is injected through state's resolve
-SignupController.$inject = ['item']
+SignupController.$inject = ['form', 'Myservice']
 
-function SignupController(form) {
+function SignupController(form, Myservice) {
 
 if(form.$valid) {
    // Code here if valid
+   // call Myservice
   }
   
 }

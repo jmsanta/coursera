@@ -30,6 +30,10 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     url: '/signin', // must be HTTPS to be valid.
     templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/signup.html',
     controller: 'siginController as ctrl'
+	 resolve : {
+			 return true;
+		  }
+	  }
   });
 
 }
