@@ -10,11 +10,6 @@ angular.module('validationApp')
 routeConfig.$inject = ['$stateProvider'];
 function routeConfig ($stateProvider) {
   // Routes
-  
-  
-  // Redirect to home page if no other URL matches
-  $urlRouterProvider.otherwise('/home');
-  
   $stateProvider
     .state('public', {
       abstract: true,
