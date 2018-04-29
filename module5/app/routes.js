@@ -21,14 +21,14 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // myInfo
   .state('myInfo', {
-    url: '/myInfo',
-    templateUrl: 'http://jmsanta.github.io/coursera/module5/templates/myInfo.html'
+    url: '/myInfo', // must be HTTPS to be valid.
+    templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/myInfo.html'
   })
 
   // Item detail
   .state('signin', {
-    url: '/signin',
-    templateUrl: 'http://jmsanta.github.io/coursera/module5/templates/signup.html',
+    url: '/signin', // must be HTTPS to be valid.
+    templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/signup.html',
     controller: 'siginController as ctrl'
   });
 
