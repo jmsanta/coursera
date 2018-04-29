@@ -66,5 +66,4 @@ function routeConfig ($stateProvider) {
     controller: 'SignupController as ctrl'
 	 
   });
-
-})();
+();
