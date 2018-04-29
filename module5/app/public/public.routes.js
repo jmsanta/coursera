@@ -1,7 +1,7 @@
 (function() {
 'use strict';
 
-angular.module('validationApp')
+angular.module('public')
 .config(routeConfig);
 
 /**
@@ -10,11 +10,6 @@ angular.module('validationApp')
 routeConfig.$inject = ['$stateProvider'];
 function routeConfig ($stateProvider) {
   // Routes
-  
-  
-  // Redirect to home page if no other URL matches
-  $urlRouterProvider.otherwise('/home');
-  
   $stateProvider
     .state('public', {
       abstract: true,
@@ -23,6 +18,19 @@ function routeConfig ($stateProvider) {
     .state('public.home', {
       url: '/',
       templateUrl: 'src/public/home/home.html'
+    })
+    .state('public.my-info', {
+      url: '/my-info',
+      templateUrl: 'src/public/home/my-info.html',
+      controller: "RegistrationController",
+      controllerAs: "reg",
+
+    })
+    .state('public.sign-up', {
+      url: '/sign-up',
+      templateUrl: 'src/public/home/sign-up.html',
+      controller: "RegistrationController",
+      controllerAs: "reg",
     })
     .state('public.menu', {
       url: '/menu',
@@ -45,25 +53,6 @@ function routeConfig ($stateProvider) {
           return MenuService.getMenuItems($stateParams.category);
         }]
       }
-    })
-	
-	 // Home page
-  .state('home', {
-    url: '/home',
-    templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/home.html'
-  })
-
-  // myInfo
-  .state('myInfo', {
-    url: '/myInfo', // must be HTTPS to be valid.
-    templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/myInfo.html'
-  })
-
-  // Item detail
-  .state('signin', {
-    url: '/signin', // must be HTTPS to be valid.
-    templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/signup.html',
-    controller: 'SignupController as ctrl'
-	 
-  });
-();
+    });
+}
+})();
