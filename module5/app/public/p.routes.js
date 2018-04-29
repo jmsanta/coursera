@@ -1,7 +1,7 @@
 (function() {
 'use strict';
 
-angular.module('public')
+angular.module('validationApp')
 .config(routeConfig);
 
 /**
