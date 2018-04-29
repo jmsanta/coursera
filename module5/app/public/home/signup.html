@@ -1,0 +1,80 @@
+<div class="container" ng-if="!reg.registered() || reg.completed == true">
+<form name='regForm' novalidate>
+
+        <input type="text" name="firstname" placeholder="First Name"
+          ng-model="reg.user.firstname"
+          required
+          minlength="3"
+          ng-maxlength="10">
+          <!-- {{ reg.user.firstname }} -->
+          <span
+            ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+            Username must be at least 3 characters long
+          </span>
+          <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+            Username must not be longer than 10 characters
+          </span>
+          <br>
+
+          <input type="text" name="lastname" placeholder="Last Name"
+            ng-model="reg.user.lastname"
+            required
+            minlength="3"
+            ng-maxlength="10">
+            <!-- {{ reg.user.lastname }} -->
+            <span
+              ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+              Username must be at least 3 characters long
+            </span>
+            <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+              Username must not be longer than 10 characters
+            </span>
+            <br>
+
+        <input type="email" name="email" placeholder="Email"
+          ng-model="reg.user.email"
+          required>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+        <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="reg.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+          <input type="text" name="dish" placeholder="Favorite Dish Number"
+            ng-model="reg.user.dish"
+            ng-blur="reg.checkExistance()">
+            <span ng-if="reg.noDishMessage != ''">
+              {{reg.noDishMessage}}
+            </span>
+            <br>
+
+        <button
+          ng-disabled="regForm.$invalid"
+          ng-click="reg.submit()">Submit</button>
+
+          <div style="margin-top: 10px;" ng-if="reg.completed == true">
+            Your information has been saved
+          </div>
+      </form>
+</div>
+<div class="container" ng-if="reg.registered() && !reg.completed">
+  <div class="">
+    Welcom back {{reg.getRegisteredUser().firstname}} {{reg.getRegisteredUser().lastname}}
+    <div class="email">
+    Your email is: {{reg.getRegisteredUser().email}}
+    </div>
+    <div class="phone">
+    Your phone number is:  {{reg.getRegisteredUser().phone}}
+    </div>
+  </div>
+  <h3>Your favorite dish is:</h3>
+  <menu-item menu-item="reg.getDish()">
+  </menu-item>
+</div>

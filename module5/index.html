@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/restaurant.css">
     <link rel="stylesheet" href="css/common.css">
   </head>
-  <body ng-app="restaurant" ng-strict-di>
+  <body ng-app="restaurant">
 
     <!-- Fixed position loading indicator -->
     <loading class="loading-indicator"></loading>
@@ -43,7 +43,7 @@
           <div id="collapsable-nav" class="collapse navbar-collapse">
             <ul id="nav-list" class="nav navbar-nav navbar-right">
               <li id="navHomeButton" class="visible-xs">
-                <a href="index.html">
+                <a href="index.html" ui-sref="public.home">
                   <span class="glyphicon glyphicon-home"></span> Home</a>
               </li>
               <li id="navMenuButton" ui-sref-active="active">
@@ -116,27 +116,25 @@
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
 
-    <!-- Main Restaurant Module -->
-    <script src="app/restaurant.module.js"></script>
+    <!-- Main Module -->
+    <script src="app/validationRestaurant.module.js"></script>
 
-    <!-- Common Module -->
+    
     <script src="app/common/common.module.js"></script>
     <script src="app/common/loading/loading.component.js"></script>
     <script src="app/common/loading/loading.interceptor.js"></script>
     <script src="app/common/menu.service.js"></script>
-    <script src="app/common/registration.controller.js"></script>
+    <script src="app/common/signup.controller.js"></script>
 
-    <!-- Public Module -->
-    <script src="app/public/public.module.js"></script>
-    <script src="app/public/public.routes.js"></script>
+    
+    <script src="app/public/p.module.js"></script>
+    <script src="app/public/p.routes.js"></script>
     <script src="app/public/menu/menu.controller.js"></script>
     <script src="app/public/menu-category/menu-category.component.js"></script>
     <script src="app/public/menu-items/menu-items.controller.js"></script>
     <script src="app/public/menu-item/menu-item.component.js"></script>
 
-    <!-- ADMIN SITE -->
 
-    <!--Application files -->
 
   </body>
 
