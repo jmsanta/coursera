@@ -13,28 +13,28 @@ function routeConfig ($stateProvider) {
   $stateProvider
     .state('public', {
       abstract: true,
-      templateUrl: 'src/public/public.html'
+      templateUrl: 'app/public/public.html'
     })
     .state('public.home', {
       url: '/',
-      templateUrl: 'src/public/home/home.html'
+      templateUrl: 'app/public/home/home.html'
     })
     .state('public.my-info', {
       url: '/my-info',
-      templateUrl: 'src/public/home/my-info.html',
+      templateUrl: 'app/public/home/my-info.html',
       controller: "RegistrationController",
       controllerAs: "reg",
 
     })
     .state('public.sign-up', {
       url: '/sign-up',
-      templateUrl: 'src/public/home/sign-up.html',
+      templateUrl: 'app/public/home/sign-up.html',
       controller: "RegistrationController",
       controllerAs: "reg",
     })
     .state('public.menu', {
       url: '/menu',
-      templateUrl: 'src/public/menu/menu.html',
+      templateUrl: 'app/public/menu/menu.html',
       controller: 'MenuController',
       controllerAs: 'menuCtrl',
       resolve: {
@@ -45,7 +45,7 @@ function routeConfig ($stateProvider) {
     })
     .state('public.menuitems', {
       url: '/menu/{category}',
-      templateUrl: 'src/public/menu-items/menu-items.html',
+      templateUrl: 'app/public/menu-items/menu-items.html',
       controller: 'MenuItemsController',
       controllerAs: 'menuItemsCtrl',
       resolve: {
