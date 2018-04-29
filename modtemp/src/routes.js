@@ -32,13 +32,13 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   // Item detail
-  .state('itemDetail', {
-    url: '/item-detail/{itemId}?short_name',
-    templateUrl: 'src/templates/itemdetail.template.html',
-    controller: 'ItemDetailController as itemDetail',
+  .state('itemList', {
+    url: '/item-list/{category}',
+    templateUrl: 'src/templates/main-itemlist.template.html',
+    controller: 'ItemListController as itemList',
     resolve: {
           items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
-            return MenuDataService.getItemsForCategory($stateParams.itemId);
+            return MenuDataService.getItemsForCategory($stateParams.category);
           }]
     }
   });
