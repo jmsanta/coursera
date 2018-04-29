@@ -31,7 +31,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     templateUrl: 'https://jmsanta.github.io/coursera/module5/templates/signup.html',
     controller: 'siginController as ctrl',
 	 resolve : {
-			 return ctrl.form.$valid;
+			 //return ctrl.form.$valid;
 		  }
 	  }
   });
