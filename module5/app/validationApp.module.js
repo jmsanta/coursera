@@ -1,4 +1,4 @@
 (function(){
 	'use strict';
-	angular.module('ValidationApp', ['ui.router'])
+	angular.module('validationApp', ['ui.router'])
 })();
