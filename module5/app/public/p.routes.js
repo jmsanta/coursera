@@ -21,14 +21,14 @@ function routeConfig ($stateProvider) {
     })
     .state('public.my-info', {
       url: '/my-info',
-      templateUrl: 'app/public/home/my-info.html',
+      templateUrl: 'app/public/home/myinfo.html',
       controller: "RegistrationController",
       controllerAs: "reg",
 
     })
     .state('public.sign-up', {
       url: '/sign-up',
-      templateUrl: 'app/public/home/sign-up.html',
+      templateUrl: 'app/public/home/signup.html',
       controller: "RegistrationController",
       controllerAs: "reg",
     })
