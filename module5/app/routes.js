@@ -16,20 +16,20 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'src/templates/home.template.html'
+    templateUrl: 'index.html'
   })
 
   // myInfo
   .state('myInfo', {
-    url: '/main-list',
-    templateUrl: 'templates/myInfo.html',
+    url: '/myInfo',
+    templateUrl: 'templates/myInfo.html'
   })
 
   // Item detail
   .state('signin', {
-    url: '/signin/',
+    url: '/signin',
     templateUrl: 'templates/signin.html',
-    controller: 'siginController as ctrl',
+    controller: 'siginController as ctrl'
   });
 
 }
