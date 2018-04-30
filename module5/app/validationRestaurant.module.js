@@ -4,7 +4,7 @@
 /**
  * Restaurant module that includes the public module as a dependency
  */
-angular.module('validationRestaurantApp', ['public'])
+angular.module('validationRestaurant', ['public'])
 .config(config);
 
 config.$inject = ['$urlRouterProvider'];
