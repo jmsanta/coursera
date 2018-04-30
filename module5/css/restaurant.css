@@ -1,8 +1,8 @@
 body {
-  font-size: 16px;
-  color: #fff;
+  font-size: 13px;
+  color: #ff5;
   background-color: #61122f;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Oxygen', arial;
 }
 
 .initial-loading {
@@ -11,7 +11,7 @@ body {
 
 /** HEADER **/
 #header-nav {
-  background-color: #f6b319;
+  background-color: #fFb319;
   border-radius: 0;
   border: 0;
 }
@@ -27,13 +27,13 @@ body {
   padding-top: 25px;
 }
 .navbar-brand h1 { /* Restaurant name */
-  font-family: 'Lora', serif;
+  font-family: 'Lora', sanserif;
   color: #557c3e;
   font-size: 1.5em;
   text-transform: uppercase;
   font-weight: bold;
-  text-shadow: 1px 1px 1px #222;
-  margin-top: 0;
+  text-shadow: 2px 2px 1px #112;
+  margin-top: 10;
   margin-bottom: 0;
   line-height: .75;
 }
@@ -98,7 +98,7 @@ body {
   margin-bottom: 35px;
 }
 #hours, #address {
-  line-height: 2;
+  line-height: 5;
 }
 #hours > span, #address > span {
   font-size: 1.3em;
@@ -109,13 +109,13 @@ body {
   line-height: 1.8;
 }
 #testimonials {
-  font-style: italic;
+  font-style: arial;
 }
 #testimonials p:nth-child(2) {
   margin-top: 25px;
 }
 a[ui-sref="admin.auth"] {
-  color: #fff;
+  color: #AAf;
 }
 /* END FOOTER */
 

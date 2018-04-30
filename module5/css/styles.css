@@ -1,8 +1,8 @@
 body {
-  font-size: 1.5em;
+  font-size: 1.8em;
 }
 input {
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 button {
@@ -19,4 +19,15 @@ button {
 
 #info {
   margin-top: 20px;
+}
+input {
+    -webkit-appearance: textfield;
+    background-color: green;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
 }
