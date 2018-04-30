@@ -1,19 +1,19 @@
 (function () {
 "use strict";
 
-angular.module('common')
-.service('MenuService', MenuService);
-
+angular.module('common').service('MenuService', MenuService);
 
 MenuService.$inject = ['$http', 'ApiPath', '$filter'];
 function MenuService($http, ApiPath, $filter) {
   var service = this;
 
   // exist dish
-  service.existDish = function (category) {
-    var config = {};
-    if (category) {
-      config.params = {'short_name': category};
+  service.existDish = function (categoryDish) {
+    
+	var conf = {};
+	
+    if (categoryDish) {
+      conf.params = {'short_name': categoryDish};
     }
 
     return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
@@ -30,10 +30,9 @@ function MenuService($http, ApiPath, $filter) {
                         return cat;
                     }
                 });
-		
-		
+		    // return the favorite dish
 			if(response.data.menu_items.length>0) {
-				return response;
+				return categoryElements[0];
 			} 		else return false;
     });
   };
@@ -55,7 +54,6 @@ function MenuService($http, ApiPath, $filter) {
     });
   };
 
- 
 }
 
 })();
