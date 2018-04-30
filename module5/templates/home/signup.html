@@ -7,7 +7,8 @@ reg.completed == true">
           ng-model="reg.user.firstname"
           required
           minlength="4"
-          ng-maxlength="15">
+		  size="40"
+          ng-maxlength="25">
           <!-- {{ reg.user.firstname }} -->
           <span
             ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
@@ -21,6 +22,7 @@ reg.completed == true">
             ng-model="reg.user.lastname"
             required
             minlength="4"
+			size="40"
             ng-maxlength="15">
             <!-- {{ reg.user.lastname }} -->
             <span
@@ -32,7 +34,7 @@ reg.completed == true">
             </span>
             <br>
 
-        <input type="email" name="email" placeholder="Enter mail"
+        <input type="email" size="40" name="email" placeholder="Enter mail"
           ng-model="reg.user.email"
           required>
           <span ng-if="regForm.email.$invalid && regForm.email.$touched">
@@ -40,7 +42,7 @@ reg.completed == true">
           </span>
           <br>
 
-        <input type="text" name="phone" placeholder="Enter Phone"
+        <input type="text" name="phone" size="40" placeholder="Enter Phone"
           ng-model="reg.user.phone"
           pattern="(\d{3})-(\d{3})-(\d{4})">
           <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
@@ -48,7 +50,7 @@ reg.completed == true">
           </span>
           <br>
 
-          <input type="text" name="dish" placeholder="Favorite Dish Number"
+          <input type="text" name="dish" size="40" placeholder="Favorite Dish CODE (shortname)"
             ng-model="reg.user.dish"
             ng-blur="reg.checkExistance()">
             <span ng-if="reg.noDishMessage != ''">

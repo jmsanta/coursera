@@ -21,11 +21,12 @@ button {
   margin-top: 20px;
 }
 input {
+	size="40";
     -webkit-appearance: textfield;
     background-color: black;
     -webkit-rtl-ordering: logical;
     cursor: text;
-    padding: 1px;
+    padding: 5px;
     border-width: 4px;
     border-style: inset;
     border-color: initial;
