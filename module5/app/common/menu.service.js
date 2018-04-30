@@ -13,13 +13,28 @@ function MenuService($http, ApiPath) {
   service.existDish = function (category) {
     var config = {};
     if (category) {
-      config.params = {'category': category};
+      config.params = {'short_name': category};
     }
 
     return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
-      if(response.data.menu_items.length>0) {
-		  return response;
-	  } else return false;
+		
+				var categoryElements = [];
+
+                var favDish = config.params.short_name.toLowerCase();
+
+                var dataResults = response.data;
+
+                categoryElements = $filter('filter')(dataResults.menu_items, function(item) {
+                    var cat = item.short_name.toLowerCase();
+                    if (cat.includes(favDish)) {
+                        return cat;
+                    }
+                });
+		
+		
+			if(response.data.menu_items.length>0) {
+				return response;
+			} 		else return false;
     });
   };
   
