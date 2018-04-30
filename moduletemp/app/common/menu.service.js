@@ -1,10 +1,15 @@
 (function () {
+
 "use strict";
 
 angular.module('common').service('MenuService', MenuService);
 
 MenuService.$inject = ['$http', 'ApiPath', '$filter'];
+
+
 function MenuService($http, ApiPath, $filter) {
+
+
   var service = this;
 
   // :::::::: exist dish ::::::::
@@ -36,7 +41,8 @@ function MenuService($http, ApiPath, $filter) {
 			} 		else return false;
     });
   };
-  
+
+ // get MENU ITEMS  
    service.getMenuItems = function (category) {
     var conf = {};
     if (category) {
@@ -48,6 +54,7 @@ function MenuService($http, ApiPath, $filter) {
     });
   };
   
+ // get CATEGORIES
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
       return response.data;

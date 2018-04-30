@@ -1,20 +1,20 @@
-<div class="container" ng-if="reg.isRegistered()">
-  
+<div class="container" ng-if="regiControl.isRegistered()">  
   <div class="container">
-      Welcome back!! 
-	  {{reg.getUser().firstname}} {{reg.getUser().lastname}}
+      Welcome Again !! 
+	  {{regiControl.getUser().firstname}} {{regiControl.getUser().lastname}}
     <div class="email">
-      Email registered is: {{reg.getUser().email}}
+      Email registered is: {{regiControl.getUser().email}}
     </div>
     <div class="phone">
-     Phone number rergistered is: {{reg.getUser().phone}}
+     Phone number rergistered is: {{regiControl.getUser().phone}}
     </div>
   </div> 
   <h4>favorite plate (DISH) is:</h4>
-  <menu-item menu-item="reg.getFavoriteDish()"></menu-item>
+  <menu-item menu-item="regiControl.getFavoriteDish()"></menu-item>
 </div>
 
 
-<div class="container" ng-if="!reg.isRegistered()">
+
+<div class="container" ng-if="!regiControl.isRegistered()">
   Not Signed Up?? <a ui-sref="public.sign-up">Sign up Now!!</a>
 </div>

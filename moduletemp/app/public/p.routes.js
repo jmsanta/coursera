@@ -7,7 +7,7 @@ angular.module('public')
 
 routeConfig.$inject = ['$stateProvider'];
 function routeConfig ($stateProvider) {
-  // Routes
+  // THE Routes
   $stateProvider
     .state('public.menu', {
       url: '/menu',
@@ -17,6 +17,7 @@ function routeConfig ($stateProvider) {
       resolve: {
         menuCategories: ['MenuService', function (MenuService) {
           return MenuService.getCategories();
+          console.log("menu categories service resolved....");
         }]
       }
     })
@@ -33,14 +34,14 @@ function routeConfig ($stateProvider) {
       url: '/my-info',
       templateUrl: 'templates/home/myinfo.html',
       controller: "SignupController",
-      controllerAs: "reg",
+      controllerAs: "regiControl",
 
     })
     .state('public.sign-up', {
       url: '/sign-up',
       templateUrl: 'templates/home/signup.html',
       controller: "SignupController",
-      controllerAs: "reg",
+      controllerAs: "regiControl",
     })
     .state('public.menuitems', {
       url: '/menu/{category}',
@@ -50,6 +51,7 @@ function routeConfig ($stateProvider) {
       resolve: {
         menuItems: ['$stateParams','MenuService', function ($stateParams, MenuService) {
           return MenuService.getMenuItems($stateParams.category);
+           console.log("menu categories service resolved.... for category" + $stateParams.category);
         }]
       }
     });
