@@ -34,5 +34,4 @@ function SignupController(MenuService, $scope) {
   {
     return MenuService.dish;
   }
-}
 })()
