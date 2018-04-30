@@ -9,13 +9,8 @@ MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
   var service = this;
 
-  service.getCategories = function () {
-    return $http.get(ApiPath + '/categories.json').then(function (response) {
-      return response.data;
-    });
-  };
-
-   service.existDish = function (category) {
+  // exist dish
+  service.existDish = function (category) {
     var config = {};
     if (category) {
       config.params = {'category': category};
@@ -27,8 +22,8 @@ function MenuService($http, ApiPath) {
 	  } else return false;
     });
   };
-
-  service.getMenuItems = function (category) {
+  
+   service.getMenuItems = function (category) {
     var config = {};
     if (category) {
       config.params = {'category': category};
@@ -38,9 +33,14 @@ function MenuService($http, ApiPath) {
       return response.data;
     });
   };
+  
+  service.getCategories = function () {
+    return $http.get(ApiPath + '/categories.json').then(function (response) {
+      return response.data;
+    });
+  };
 
+ 
 }
-
-
 
 })();
