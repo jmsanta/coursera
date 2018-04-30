@@ -12,12 +12,12 @@ function SignupController(MenuService, $scope) {
     .then(function (response) {
 		
 	  if(response){
-    		signctrl.noDishMessage = "";
+    		signctrl.DishMessage = "";
     		MenuService.registered = true;
     		MenuService.user = signctrl.user;
     		MenuService.dish = response;
 	  }	else {
-		  signctrl.noDishMessage = "No such menu number exists";
+		  signctrl.DishMessage = "No such menu number exists";
 	  }
     })
     .catch(function (error) {
