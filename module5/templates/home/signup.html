@@ -42,7 +42,7 @@ reg.completed == true">
           </span>
           <br>
 
-        <input type="text" name="phone" size="40" placeholder="Enter Phone"
+        <input type="text" required name="phone" size="40" placeholder="Enter Phone"
           ng-model="reg.user.phone"
           pattern="(\d{3})-(\d{3})-(\d{4})">
           <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
