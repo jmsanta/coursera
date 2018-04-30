@@ -7,7 +7,7 @@ MenuService.$inject = ['$http', 'ApiPath', '$filter'];
 function MenuService($http, ApiPath, $filter) {
   var service = this;
 
-  // exist dish
+  // :::::::: exist dish ::::::::
   service.existDish = function (categoryDish) {
     
 	var conf = {};
@@ -20,7 +20,7 @@ function MenuService($http, ApiPath, $filter) {
 		
 				var categoryElements = [];
 
-                var favDish = config.params.short_name.toLowerCase();
+                var favDish = conf.params.short_name.toLowerCase();
 
                 var dataResults = response.data;
 
@@ -38,12 +38,12 @@ function MenuService($http, ApiPath, $filter) {
   };
   
    service.getMenuItems = function (category) {
-    var config = {};
+    var conf = {};
     if (category) {
-      config.params = {'category': category};
+      conf.params = {'category': category};
     }
 
-    return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
+    return $http.get(ApiPath + '/menu_items.json', conf).then(function (response) {
       return response.data;
     });
   };

@@ -7,7 +7,7 @@
     margin: 0 auto;
     top: 40%;
     z-index: 100;
-    background-color: #FFF;
+    background-color: red;
 }
 
 .loading-indicator img {
