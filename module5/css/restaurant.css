@@ -1,8 +1,8 @@
 body {
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   background-color: #61122f;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Oxygen', sans-serif;
 }
 
 .initial-loading {
@@ -58,14 +58,14 @@ body {
   text-align: center;
 }
 #nav-list a:hover {
-  background: #E7E7E9;
+  background: #E7E7E7;
 }
 #nav-list a span {
   font-size: 1.8em;
 }
 
 #phone {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 #phone a { /* Phone number */
   text-align: right;
@@ -73,12 +73,12 @@ body {
 }
 #phone div { /* We Deliver */
   color: #557c3e;
-  text-align: center;
+  text-align: right;
   padding-right: 15px;
 }
 
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
-  border: 1px solid #11122f;
+  border: 1px solid #61122f;
 }
 .navbar-header button.navbar-toggle {
   clear: both;
@@ -91,7 +91,7 @@ body {
   margin-top: 30px;
   padding-top: 35px;
   padding-bottom: 30px;
-  background-color: #112;
+  background-color: #222;
   border-top: 0;
 }
 .panel-footer div.row {
@@ -165,7 +165,7 @@ a[ui-sref="admin.auth"] {
     margin: 0 20px;
     padding: 10px;
     border: 2px solid #fff;
-    background-color: #666319;
+    background-color: #f6b319;
     color: #951c49;
   }
   #xs-deliver {
