@@ -23,7 +23,7 @@ function MenuService($http, ApiPath) {
 
     return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
       if(response.data.menu_items.length>0) {
-		  return true;
+		  return response;
 	  } else return false;
     });
   };

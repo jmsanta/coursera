@@ -11,16 +11,20 @@ function SignupController(MenuService, $scope) {
   
   MenuService.existDish(signctrl.user.dish)
     .then(function (response) {
-      signctrl.noDishMessage = "";
-     
-	 MenuService.registered = true;
-      MenuService.user = signctrl.user;
-      MenuService.dish = response;
-     
+		
+	  if(response){
+		signctrl.noDishMessage = "";
+		MenuService.registered = true;
+		MenuService.user = signctrl.user;
+		MenuService.dish = response;
+	  }	else {
+		  signctrl.noDishMessage = "No such menu number exists";
+	  }
+    
     })
-    .catch(function (response) {
-      console.log(response);
-      signctrl.noDishMessage = "No such menu number exists";
+    .catch(function (error) {
+		throw error;
+      
     });
   };
 
