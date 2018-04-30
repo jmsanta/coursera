@@ -22,7 +22,7 @@ button {
 }
 input {
     -webkit-appearance: textfield;
-    background-color: yellow;
+    background-color: black;
     -webkit-rtl-ordering: logical;
     cursor: text;
     padding: 1px;

@@ -5,8 +5,8 @@ angular.module('common')
 .service('MenuService', MenuService);
 
 
-MenuService.$inject = ['$http', 'ApiPath'];
-function MenuService($http, ApiPath) {
+MenuService.$inject = ['$http', 'ApiPath', '$filter'];
+function MenuService($http, ApiPath, $filter) {
   var service = this;
 
   // exist dish
