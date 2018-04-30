@@ -3,7 +3,7 @@
 ng-if="!regiControl.isRegistered() || 
 regiControl.completed == true">
 
-<form name='regForm' novalidate>
+<form name='registerForm' novalidate>
 
            <input type="text" name="lastname" placeholder="Enter Last-Name"
             ng-model="regiControl.user.lastname"
@@ -12,10 +12,10 @@ regiControl.completed == true">
             size="40"
             ng-maxlength="15">
             <span
-              ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+              ng-if="(registerForm.lastname.$error.minlength || registerForm.lastname.$error.required) && registerForm.lastname.$touched">
               Last-Name must be at least 4 characters long!!
             </span>
-            <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+            <span ng-if="registerForm.lastname.$error.maxlength && registerForm.lastname.$touched">
               Last-Name must not be longer than 15 characters!!
             </span>
             <br>
@@ -27,10 +27,10 @@ regiControl.completed == true">
 		      size="40"
           ng-maxlength="25">
           <span
-            ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+            ng-if="(registerForm.firstname.$error.minlength || registerForm.firstname.$error.required) && registerForm.firstname.$touched">
             firstname must be at least 4 characters long!!
           </span>
-          <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+          <span ng-if="registerForm.firstname.$error.maxlength && registerForm.firstname.$touched">
             firstname must not be longer than 25 characters!!
           </span>
           <br>
@@ -38,32 +38,31 @@ regiControl.completed == true">
             <input type="text" required name="phone" size="40" placeholder="Enter Phone"
           ng-model="regiControl.user.phone"
           pattern="(\d{3})-(\d{3})-(\d{4})">
-          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
-            Phone number format has mask ###-###-####.!!
+          <span ng-if="registerForm.phone.$invalid && registerForm.phone.$touched">
+            Phone number is required and with mask ###-###-####.!!
           </span>
            <span
-            ng-if="(regForm.phone.$error.required) && regForm.firstname.$touched">
-            Phone number is required!!
+            ng-if="(registerForm.phone.$error.required) && registerForm.firstname.$touched">
+            
           </span>
           <br>
         
         <input type="email" size="40" name="email" placeholder="Enter mail"
           ng-model="regiControl.user.email"
           required>
-          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          <span ng-if="registerForm.email.$invalid && registerForm.email.$touched">
             Must be a valid email address: NAME(handler)@domain : format!!
           </span>
           <br>
 
           <input type="text" name="dish" size="40" placeholder="Favorite Dish CODE (shortname)"
-            ng-model="regiControl.user.dish"
-            ng-blur="regiControl.checkExistance()">
+            ng-model="regiControl.user.dish">
             <span ng-if="regiControl.DishMessage != ''">
               {{regiControl.DishMessage}}
             </span>
             <br>
 
-        <button ng-disabled="regForm.$invalid"ng-click="regiControl.submit()">REGISTER NOW</button>
+        <button ng-disabled="registerForm.$invalid"ng-click="regiControl.submit()">REGISTER NOW</button>
           <div style="margin-top: 10px;" 
           ng-if="regiControl.completed == true">
             information is now saved : OK
