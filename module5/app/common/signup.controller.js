@@ -7,9 +7,9 @@ SignupController.$inject = ['MenuService','$scope']
 function SignupController(MenuService, $scope) {
   var signctrl = this;
 
-  signctrl.submit = function (signctrl) {
+  signctrl.submit = function () {
 
-  signctrl.checkExistance = function (signctrl) {
+  signctrl.checkExistance = function () {
     MenuService.dishExists(signctrl.user.dish)
     .then(function (response) {
       signctrl.noDishMessage = "";
