@@ -21,21 +21,6 @@ function SignupController(MenuService, $scope) {
     });
   }
   
-  MenuService.dishExists(signctrl.user.dish)
-    .then(function (response) {
-      signctrl.noDishMessage = "";
-      MenuService.registered = true;
-      MenuService.user = signctrl.user;
-      MenuService.dish = response;
-      signctrl.completed = true;
-      console.log(response);
-    })
-    .catch(function (response) {
-      console.log(response);
-      signctrl.noDishMessage = "No such menu number exists";
-    });
-  };
-
   signctrl.registered = function () {
     return MenuService.registered;
   }
