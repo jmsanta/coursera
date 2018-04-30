@@ -16,7 +16,7 @@ function MenuService($http, ApiPath, $filter) {
       conf.params = {'short_name': categoryDish};
     }
 
-    return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
+    return $http.get(ApiPath + '/menu_items.json', conf).then(function (response) {
 		
 				var categoryElements = [];
 
