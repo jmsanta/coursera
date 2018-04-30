@@ -3,7 +3,9 @@
 angular.module('common').controller('SignupController', SignupController);
 
 SignupController.$inject = ['MenuService','$scope']
+
 function SignupController(MenuService, $scope) {
+ 
   var signctrl = this;
 
   signctrl.submit = function () {
@@ -12,31 +14,28 @@ function SignupController(MenuService, $scope) {
     .then(function (response) {
 		
 	  if(response){
-		signctrl.noDishMessage = "";
-		MenuService.registered = true;
-		MenuService.user = signctrl.user;
-		MenuService.dish = response;
+    		signctrl.DishMessage = "";
+    		MenuService.registered = true;
+    		MenuService.user = signctrl.user;
+    		MenuService.dish = response;
 	  }	else {
-		  signctrl.noDishMessage = "No such menu number exists";
+		  signctrl.DishMessage = "No such menu number(shortname) Exists!";
 	  }
     })
     .catch(function (error) {
 		throw error;
-      
     });
   };
 
-  signctrl.registered = function () {
+  signctrl.isRegistered = function () {
     return MenuService.registered;
   }
 
-  signctrl.getRegisteredUser = function ()
-  {
+  signctrl.getUser = function (){
     return MenuService.user;
   }
 
-  signctrl.getFavoriteDish = function ()
-  {
+  signctrl.getFavoriteDish = function (){
     return MenuService.dish;
   }
 }
