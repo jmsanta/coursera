@@ -1,55 +1,52 @@
 (function () {
 
 angular.module('common')
-.controller('RegistrationController', RegistrationController);
+.controller('signupController', signupController);
 
-RegistrationController.$inject = ['MenuService','$scope']
-function RegistrationController(MenuService, $scope) {
+signupController.$inject = ['MenuService','$scope']
+function signupController(MenuService, $scope) {
   var reg = this;
 
 
-  reg.submit = function () {
-    console.log(reg);
-    console.log(MenuService);
-    console.log(reg.user.dish);
+  registeredServ.submit = function () {
 
-    MenuService.dishExists(reg.user.dish)
+    MenuService.dishExists(registeredServ.user.dish)
     .then(function (response) {
-      reg.noDishMessage = "";
+      registeredServ.noDishMessage = "";
       MenuService.registered = true;
-      MenuService.user = reg.user;
+      MenuService.user = registeredServ.user;
       MenuService.dish = response;
-      reg.completed = true;
+      registeredServ.completed = true;
       console.log(response);
     })
     .catch(function (response) {
       console.log(response);
-      reg.noDishMessage = "No such menu number exists";
+      registeredServ.noDishMessage = "No such menu number exists";
     });
   };
 
-  reg.checkExistance = function () {
-    MenuService.dishExists(reg.user.dish)
+  registeredServ.checkExistance = function () {
+    MenuService.dishExists(registeredServ.user.dish)
     .then(function (response) {
-      reg.noDishMessage = "";
+      registeredServ.noDishMessage = "";
       console.log(response);
     })
     .catch(function (response) {
       console.log(response);
-      reg.noDishMessage = "No such menu number exists";
+      registeredServ.noDishMessage = "No such menu number exists";
     });
   }
 
-  reg.registered = function () {
+  registeredServ.registered = function () {
     return MenuService.registered;
   }
 
-  reg.getRegisteredUser = function ()
+  registeredServ.getRegisteredUser = function ()
   {
     return MenuService.user;
   }
 
-  reg.getDish = function ()
+  registeredServ.getDish = function ()
   {
     return MenuService.dish;
   }
