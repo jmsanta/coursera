@@ -15,6 +15,18 @@ function MenuService($http, ApiPath) {
     });
   };
 
+   service.existDish = function (category) {
+    var config = {};
+    if (category) {
+      config.params = {'category': category};
+    }
+
+    return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
+      if(response.data.menu_items.length>0) {
+		  return true;
+	  } else return false;
+    });
+  };
 
   service.getMenuItems = function (category) {
     var config = {};
