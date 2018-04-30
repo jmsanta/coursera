@@ -1,4 +1,4 @@
-<div class="container" ng-if="!reg.registered() || 
+<div class="container" ng-if="!reg.isRegistered() || 
 reg.completed == true">
 
 <form name='regForm' novalidate>
@@ -53,8 +53,8 @@ reg.completed == true">
           <input type="text" name="dish" size="40" placeholder="Favorite Dish CODE (shortname)"
             ng-model="reg.user.dish"
             ng-blur="reg.checkExistance()">
-            <span ng-if="reg.noDishMessage != ''">
-              {{reg.noDishMessage}}
+            <span ng-if="reg.DishMessage != ''">
+              {{reg.DishMessage}}
             </span>
             <br>
 
@@ -65,14 +65,14 @@ reg.completed == true">
       </form>
 </div>
 
-<div class="container" ng-if="reg.registered() && !reg.completed">
+<div class="container" ng-if=" !reg.completed && reg.isRegistered() ">
   <div class="">
-    nice to meet you again, welcome back!! {{reg.getRegisteredUser().firstname}} {{reg.getRegisteredUser().lastname}}
+    nice to meet you again, welcome back!! {{reg.getUser().firstname}} {{reg.getUser().lastname}}
     <div class="email">
-    email is: {{reg.getRegisteredUser().email}}
+    email is: {{reg.getUser().email}}
     </div>
     <div class="phone">
-    phone number is:  {{reg.getRegisteredUser().phone}}
+    phone number is:  {{reg.getUser().phone}}
     </div>
   </div>
   <h3>favorite dish is:</h3>
