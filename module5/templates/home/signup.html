@@ -12,7 +12,7 @@ regiControl.completed == true">
             size="40"
             ng-maxlength="15">
             <span
-              ng-if="(registerForm.lastname.$error.minlength || registerForm.lastname.$error.required) && registerForm.lastname.$touched">
+              ng-if="(registerForm.lastname.$error.minlength || registerForm.lastname.$error.required) && (registerForm.lastname.$touched || registerform.submitted)">
               Last-Name must be at least 4 characters long!!
             </span>
             <span ng-if="registerForm.lastname.$error.maxlength && registerForm.lastname.$touched">
@@ -51,7 +51,7 @@ regiControl.completed == true">
           ng-model="regiControl.user.email"
           required>
           <span ng-if="registerForm.email.$invalid && registerForm.email.$touched">
-            Must be a valid email address: NAME(handler)@domain : format!!
+            Must be a valid email address: (sample : name@tonline.com)
           </span>
           <br>
 
@@ -62,7 +62,7 @@ regiControl.completed == true">
             </span>
             <br>
 
-        <button ng-disabled="registerForm.$invalid"ng-click="regiControl.submit()">REGISTER NOW</button>
+        <button  ng-disabled="registerForm.$invalid"ng-click="regiControl.submit()">REGISTER NOW</button>
           <div style="margin-top: 10px;" 
           ng-if="regiControl.completed == true">
             information is now saved : OK
